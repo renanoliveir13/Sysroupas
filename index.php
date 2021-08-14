@@ -78,6 +78,4 @@ header("Pragma: no-cache");
 				</footer>
 
 </body>
-
-
 </html>

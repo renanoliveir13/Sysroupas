@@ -54,28 +54,6 @@ header("Pragma: no-cache");
 					if (isset($_POST['Deletar'])) {
 						// Especifica a variavel
 						$cd_fornecedor = $_POST['cd_fornecedor'];
-						// Buscar nome do fornecedor
-						$procurar_nome = "SELECT nome FROM fornecedor WHERE cd_fornecedor = :cd_fornecedor";
-						$busca_nome = $conexao->prepare($procurar_nome);
-						$busca_nome->bindValue(':cd_fornecedor', $cd_fornecedor);
-						$busca_nome->execute();
-						$linha_nome = $busca_nome->fetch(PDO::FETCH_ASSOC);
-						$nome_fornecedor = $linha_nome['nome'];
-						// Query que verifica se existe o registro de fornecedor em compra
-						$procurar_forn = "SELECT COUNT(cd_fornecedor) AS countForn 
-			FROM compra_produto WHERE cd_fornecedor = :cd_fornecedor";
-						$busca_forn = $conexao->prepare($procurar_forn);
-						$busca_forn->bindValue(':cd_fornecedor', $cd_fornecedor);
-						$busca_forn->execute();
-						$linha = $busca_forn->fetch(PDO::FETCH_ASSOC);
-						$countForn = $linha['countForn'];
-						// Se o registro de fornecedor existir na tabela compra 
-						if ($countForn > 0) {
-							$pluralSingular = $countForn == 1 ? "uma compra" : "$countForn compras";
-							$msg =  "Você não pode apagar <b>{$nome_fornecedor}</b> do sistema, pois está registrado em $pluralSingular.";
-							header('Location: /web/form_crud/form_delete_fornecedor.php?id='.$cd_fornecedor.'&error='.$msg);
-							exit();
-						}else{
 						// Se a remocao for possivel de realizar
 						try {
 							// Query que faz a remocao
@@ -99,7 +77,6 @@ header("Pragma: no-cache");
 							header('Location: /web/form_crud/form_delete_fornecedor.php?id='.$cd_fornecedor.'&error='.$msg);
 							die();
 						}
-					}
 						// Caso nao exista
 					} else {
 						$msg = "Ocorreu algum erro, refaça novamente a operação.";

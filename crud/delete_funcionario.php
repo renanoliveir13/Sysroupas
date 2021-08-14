@@ -61,7 +61,6 @@
 				$pluralSingular = $countFuncionario == 1 ? "uma venda" : "$countFuncionario vendas";
 				$msg =  "{$nome_usuario} não pode ser excluído, pois ele realizou $pluralSingular no sistema.";
 				header('Location: /web/form_crud/form_delete_funcionario.php?id='.$cd_funcionario.'&error='.$msg);
-
 				exit;
 			}
 			
