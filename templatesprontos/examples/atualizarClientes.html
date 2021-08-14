@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Atualização</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
+	<link rel="stylesheet" href="estiloBotao.css"/>  
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+</head>
+
+<body>
+<form id="formulario" method="POST" action="insert_cliente.php">
+    <div class="wrapper">
+        <div class="sidebar">
+         
+            <div class="sidebar-wrapper"  style="background-color: #808080">
+                <div class="logo">
+					<a href="dashboard.html" class="simple-text">
+                        SYSRoupas
+                    </a>
+                </div>
+                <ul class="nav">
+				<li class="nav-item dropdown">
+                    <li class="nav-item active">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="no-icon">CLIENTE</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="user.html">Cadastrar</a>
+                                    <a class="dropdown-item" href="listarCliente.html">Listar</a>
+				    </li>
+                </li>
+				<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="no-icon">FUNCIONÁRIO</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="cadastroFuncionarios.html">Cadastrar</a>
+                                    <a class="dropdown-item" href="listarFuncionario.html">Listar</a>
+                </li>
+				<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="no-icon">FORNECEDOR</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="cadastroFornecedor.html">Cadastrar</a>
+                                    <a class="dropdown-item" href="listarFornecedor.html">Listar</a>
+                </li>
+				<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="no-icon">PRODUTO</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="cadastroProdutos.html">Cadastrar</a>
+                                    <a class="dropdown-item" href="listarProdutos.html">Listar</a>
+                </li>
+				<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="no-icon">VENDA</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="cadastroVendas.html">Cadastrar</a>
+                                    <a class="dropdown-item" href="listarVendas.html">Listar</a>
+                </li>
+				<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="no-icon">DEVOLUÇÃO</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="cadastroDevolucoes.html">Cadastrar</a>
+                                    <a class="dropdown-item" href="listarDevolucoes.html">Listar</a>
+                </li>
+				<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="no-icon">FLUXO DE CAIXA</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">Fluxo de vendas</a>
+                                    <a class="dropdown-item" href="#">Fluxo de devoluções</a>
+                </li>
+				<li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="no-icon">CONFIGURAÇÕES</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="alterarSenha.html">Alterar senha</a>
+									<a class="dropdown-item" href="#">Área administrador</a>
+				</li>
+				    <p> 
+						<input type="submit" value="SAIR" /> 
+					</p>
+				</ul>
+                
+            </div>
+        </div>
+        <div class="main-panel">
+            <!-- Navbar -->
+           <nav class="navbar navbar-expand-lg " color-on-scroll="500" style="background-color: #DCDCDC">
+                <div class="container-fluid">
+            
+                    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                        <ul class="nav navbar-nav mr-auto">
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pablo">
+                                    <span class="no-icon">João Silva</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- fim Navbar -->
+            <div class="content">
+			<form method="POST" action="form_insert_cliente.php">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Atualizar Cliente</h4>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+											<div class="row">
+											 <div class="col-md-4 pr-1">
+                                                <div class="form-group">
+                                                    <label>ID cliente</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+											</div>
+											<div class="row">
+                                            <div class="col-md-6 pr-1">
+                                                <div class="form-group">
+                                                    <label>Nome</label>
+                                                    <input type="text" class="form-control" placeholder="Ex: José da Silva">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 pl-1">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">CPF</label>
+                                                    <input type="cpf" class="form-control" placeholder="Ex: 123.123.123-30" maxlength="14">
+                                                </div>
+                                            </div>
+											</div>
+                                        
+                                         
+                                        <div class="row">
+                                            <div class="col-md-6 pr-1">
+                                                <div class="form-group">
+												<label for="phone">Telefone</label>
+												<input type="text" class="form-control" id="phone" name="phone" placeholder="Ex:(99) 9999-9999" pattern="(\([0-9]{2}\))\s([0-9]{0-9})?([0-9]{4})-([0-9]{4})" title="Número de telefone precisa ser no formato (99) 9999-9999" required="required" />
+												</div>
+                                            </div>
+                                            <div class="col-md-6 pl-1">
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Email</label>
+                                                    <input type="email" class="form-control" placeholder="Ex: jose@gmail.com">
+                                                </div>
+                                            </div>
+                                        </div>
+										                                        <div class="row">
+                                            <div class="col-md-6 pr-1">
+                                                <div class="form-group">
+                                                    <label>Cidade</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 pl-1">
+                                                <div class="form-group">
+                                                    <label>Bairro</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="row">
+                                            <div class="col-md-4 pr-1">
+                                                <div class="form-group">
+                                                    <label>Rua</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 px-1">
+                                                <div class="form-group">
+                                                    <label>Número</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+                                            </div>
+                                        </div>
+									<a target="_blank" href="#" class="btn btn-round btn-fill btn-info btn pull-right">Atualizar</a>
+                                 
+									 <div class="clearfix"></div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer" style="background-color: #DCDCDC">
+                <div class="container-fluid">
+                    <nav>
+                        <p class="copyright text-center">
+                            ©
+                            
+                            WEB 2
+                        </p>
+                    </nav>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+</body>
+<script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/js/core/popper.min.js" type="text/javascript"></script>
+<script src="../assets/js/core/bootstrap.min.js" type="text/javascript"></script>
+<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+<script src="../assets/js/plugins/bootstrap-switch.js"></script>
+<!--  Chartist Plugin  -->
+<script src="../assets/js/plugins/chartist.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<!-- Control Center for Light Bootstrap Dashboard: scripts for the example pages etc -->
+<script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
+<!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/js/demo.js"></script>
+
+</html>

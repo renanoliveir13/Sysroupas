@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estiloCadastro.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	
+    <title>Cadastro</title>
+   <style>
+   body{
+  background: #F6F6F6;
+}
+</style>
+  </head>
+  <body>
+	<div id="menu_lateral">
+	  <ul>
+		<li><a href="link1.htm">CLIENTE</a>
+			<ul> 
+				<li><a href="#">Cadastrar</a></li> 
+				<li><a href="#">Listar</a></li> 
+			</ul> 
+		</li>
+		<li><a href="link2.htm">FUNCIONÁRIO</a>
+			<ul> 
+				<li><a href="#">Cadastrar</a></li> 
+				<li><a href="#">Listar</a></li> 
+			</ul> 
+		</li>
+		<li><a href="link3.htm">FORNECEDOR</a>
+			<ul> 
+				<li><a href="#">Cadastrar</a></li> 
+				<li><a href="#">Listar</a></li> 
+			</ul> 
+		</li>
+		<li><a href="link4.htm">PRODUTO</a>
+			<ul> 
+				<li><a href="#">Cadastrar</a></li> 
+				<li><a href="#">Listar</a></li> 
+			</ul> 
+		</li>
+		<li><a href="link5.htm">COMPRA</a>
+			<ul> 
+				<li><a href="#">Cadastrar</a></li> 
+				<li><a href="#">Listar</a></li> 
+			</ul> 
+		</li>
+		<li><a href="link2.htm">VENDA</a>
+			<ul> 
+				<li><a href="#">Cadastrar</a></li> 
+				<li><a href="#">Listar</a></li> 
+			</ul> 
+		</li>
+		<li><a href="link3.htm">DEVOLUÇÃO</a>
+			<ul> 
+				<li><a href="#">Cadastrar</a></li> 
+				<li><a href="#">Listar</a></li> 
+			</ul> 
+		</li>
+		<li><a href="link4.htm">FLUXO DE CAIXA</a>
+			<ul> 
+				<li><a href="#">Cadastrar</a></li> 
+				<li><a href="#">Listar</a></li> 
+			</ul> 
+		</li>
+		<li><a href="link5.htm">CONFIGURAÇÕES</a>
+			<ul> 
+				<li><a href="#">Cadastrar</a></li> 
+				<li><a href="#">Listar</a></li> 
+			</ul> 
+		</li>
+	  </ul>
+	 <div id="botao-menu">
+	  <p> 
+		   <button type="button" class="btn btn-danger ">SAIR</button>
+      </p>
+	 </div>
+	 
+	</div>
+
+ <nav id="menu">
+    <ul>
+    <h2><img  src="https://img.icons8.com/windows/452/person-male.png"><li><a  href="#" >João Silva</a></li></h2>    
+   </ul>
+</nav>
+
+<div class="container" >
+    <a class="links" id="paracadastro"></a>
+    <a class="links" id="paralogin"></a>
+     
+    <div class="content">      
+
+      <!--FORMULÁRIO DE CADASTRO-->
+      <div id="cadastro">
+        <form method="post" action=""> 
+          <h1>Cadastrar Cliente</h1> 
+           
+          <p> 
+            <label for="nome_cad">Nome</label>
+            <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="ex. José Silva" />
+          </p>
+		  <p> 
+            <label for="email_cad">CPF</label>
+            <input id="email_cad" name="email_cad" required="required" type="email" placeholder="ex. 234.345.123-30"/> 
+          </p>
+           
+          <p> 
+            <label for="email_cad">Seu e-mail</label>
+            <input id="email_cad" name="email_cad" required="required" type="email" placeholder="ex. jose@gmail.com"/> 
+          </p>
+           
+          <p> 
+            <label for="senha_cad">Telefone</label>
+            <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="ex. 8989-3456"/>
+          </p>
+		  <p> 
+            <label for="email_cad">Cidade</label>
+            <input id="email_cad" name="email_cad" required="required" type="email" placeholder=""/> 
+          </p>
+		              <label for="email_cad">Bairro</label>
+            <input id="email_cad" name="email_cad" required="required" type="email" placeholder=""/> 
+          </p>
+                       <label for="email_cad">Rua</label>
+            <input id="email_cad" name="email_cad" required="required" type="email" placeholder=""/> 
+          </p>
+		              <label for="email_cad">Número</label>
+            <input id="email_cad" name="email_cad" required="required" type="email" placeholder=""/> 
+          </p>
+          <p> 
+            <input type="submit" value="Cadastrar"/> 
+          </p>
+           
+        </form>
+      </div>
+    </div>
+  </div>  
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

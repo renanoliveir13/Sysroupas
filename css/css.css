@@ -1,0 +1,38 @@
+﻿@charset "UTF-8";
+
+ /* input[type=number] retira a setas de seleção dos inputs type="number" */
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;  
+}
+
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+}
+
+i {
+  margin-left: -25px;
+  cursor: pointer;
+}
+
+#text, #text1, #text2 {
+  display: none;
+}
+
+a {
+   text-decoration: none;
+}
+
+select[readonly] {
+  background: #eee;
+  pointer-events: none;
+  touch-action: none;
+}
+
+input:read-only {
+  background-color: #eee;
+}
+
+footer#rodape {
+  border-top: 1px solid white;
+}
