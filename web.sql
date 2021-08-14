@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Ago-2021 às 04:45
+-- Tempo de geração: 14-Ago-2021 às 20:07
 -- Versão do servidor: 10.4.14-MariaDB
--- versão do PHP: 7.2.34
+-- versão do PHP: 7.3.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,7 +44,8 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`cd_cliente`, `nome`, `cpf`, `telefone`, `email`, `cidade`, `bairro`, `rua`, `numero`) VALUES
-(1, 'Banana', '666.666.666-66', '(98) 9831-5515', 'banana@gmail.com', 'SANTA', 'saddsa', 'zzzz', 11);
+(1, 'Itachi', '430.982.131-28', '(43) 8512-0728', 'itachi@akatsuki.com', 'Guanambi', 'Bairro 5', 'Rua 10', 55),
+(2, 'Konan', '894.321.908-12', '(54) 0430-3922', 'konan@akatsuki.com', 'Guanambi', 'Bairro 7', 'Rua 15', 42);
 
 -- --------------------------------------------------------
 
@@ -73,12 +74,8 @@ CREATE TABLE `compra_produto` (
 --
 
 INSERT INTO `compra_produto` (`cd_produto`, `nome`, `tipo`, `marca`, `codigo_barra`, `cor`, `tamanho`, `genero`, `quantidade`, `valor_compra`, `porcentagem_revenda`, `valor_revenda`, `data_compra`) VALUES
-(1, 'Camiseta', NULL, 'Polo Ralph Lauren', '1-213123-233232', 'Vinho', 'GG', 'M', 20, '50.00', 10, '55.00', '2021-08-07 23:42:56'),
-(10, 'Calça', NULL, 'TOMMY HILFIGER', '5-555555-555555', 'Amarela', 'M', 'M', 14, '100.00', 10, '110.00', '2021-08-08 05:20:26'),
-(11, 'Camiseta Listrada', 'Jaqueta', 'Lacoste', '4-544545-545454', 'Preta', 'P', 'M', 4, '15.00', 5, '15.75', '2021-08-11 17:04:58'),
-(12, 'sadsaddasdsa', 'Camiseta', 'Lacoste', '1-421421-321442', 'Preta', 'P', 'M', 6, '100.00', 70, '170.00', '2021-08-12 04:15:38'),
-(13, 'Baianinha', 'Calça', 'Hollister', '2-144214-242121', 'Branca', 'M', 'M', 18, '100.00', 10, '110.00', '2021-08-12 04:37:13'),
-(16, 'RELOGIO TOP', 'Bermuda', 'Polo Ralph Lauren', '2-142144-142124', 'Preta', 'P', 'M', 16, '120.00', 20, '144.00', '2021-08-13 13:27:23');
+(1, 'Camiseta de fio 30.1', 'Camiseta', 'John John', '0-437523-909428', 'Vermelha', 'M', 'M', 30, '11.43', 50, '17.15', '2021-08-14 13:56:28'),
+(2, 'Bermuda de fio 30.1', 'Bermuda', 'TOMMY HILFIGER', '5-409728-362137', 'Cinza', 'M', 'M', 31, '9.87', 80, '17.77', '2021-08-14 14:08:08');
 
 -- --------------------------------------------------------
 
@@ -91,14 +88,6 @@ CREATE TABLE `devolucao` (
   `data_devolucao` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `devolucao`
---
-
-INSERT INTO `devolucao` (`cd_devolucao`, `data_devolucao`) VALUES
-(2, '2021-08-11 23:48:18'),
-(3, '2021-08-12 06:58:25');
-
 -- --------------------------------------------------------
 
 --
@@ -109,7 +98,7 @@ CREATE TABLE `entrada` (
   `cd_entrada` int(11) NOT NULL,
   `cd_funcionario` int(11) NOT NULL,
   `cd_fornecedor` int(11) NOT NULL,
-  `descricao` text DEFAULT 'Pagamento á vista',
+  `descricao` varchar(255) DEFAULT '''Pagamento á vista''',
   `data_venda` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -118,7 +107,7 @@ CREATE TABLE `entrada` (
 --
 
 INSERT INTO `entrada` (`cd_entrada`, `cd_funcionario`, `cd_fornecedor`, `descricao`, `data_venda`) VALUES
-(1, 1, 2, 'Compra de varias calçasxxxxxxx', '2021-08-13 06:40:03');
+(1, 3, 2, 'Teste de nota', '2021-08-14 17:52:02');
 
 -- --------------------------------------------------------
 
@@ -144,9 +133,8 @@ CREATE TABLE `fornecedor` (
 --
 
 INSERT INTO `fornecedor` (`cd_fornecedor`, `nome`, `cnpj`, `telefone`, `email`, `estado`, `cidade`, `bairro`, `endereco`, `numero`) VALUES
-(1, 'Chacal Roupasxz', '54.920.182/0820-94', '(45) 0218-3210', 'chacal.roupas@gmail.com', 'MA', 'Guanambi ', 'Bairro 64', 'Rua 42', 999),
-(2, 'Calças Bahia', '57.309.242/7321-03', '(45) 0218-321', 'calcas.bahia@gmail.com', '', 'Cidade 5', 'Bairro 8', 'Rua 19', 5473),
-(3, 'Oestex', '56.789.033/3221-11', '(77) 8143-4367', 'oeste@gothan.com', '', 'pindaiba', 'centro', 'rua do fundo', 1);
+(1, 'Trapos PHP', '54.793.082/8281-21', '(58) 7213-9018', 'trapos_php@gmail.com', 'BA', 'Guanambi', 'Bairro Web', 'Rua Hash', 81),
+(2, 'Chacal Roupas', '54.964.092/1381-20', '(30) 2974-2309', 'chacal.roupas@gmail.com', 'MG', 'Uma cidade ai', 'Uma bairro ai', 'Uma rua ai', 47);
 
 -- --------------------------------------------------------
 
@@ -169,9 +157,10 @@ CREATE TABLE `funcionario` (
 --
 
 INSERT INTO `funcionario` (`cd_funcionario`, `nome`, `cargo`, `cpf`, `telefone`, `email`, `senha`) VALUES
-(1, 'Batman', 'Atendente', '600.296.303-04', '(98) 9831-5515', 'batman@hotmail.com', '$2y$10$kGFrFur6va3conCH8ellT.U.c9ULdBs7BKUSu1xd.y4roNkTDV2m6'),
-(2, 'Professor FabioX', 'Administrador', '222.222.222-22', '(90) 5426-1853', 'professor@professor.com.br', '$2y$10$XIlHAanq1KTwRm0jkV8AjuW.J37kf/ZExaQBNnWbrznDy2rrJZRRy'),
-(3, 'Uenio Viana', 'Administrador', '333.333.333-33', '(06) 2731-8561', 'ueniomlh@gmail.com', '$2y$10$nxL9KhU7sIK7zGEHqS12gOQM792kge4MFb5unm62qi1dmIM/J8bsW');
+(1, 'Fábio', 'Administrador', '111.111.111-11', '(12) 3323-1894', 'professor@professor.com.br', '$2y$10$VcurDOdGNECBG/cNTFXLQOEl54Nu1WWwiGlCGtk4LHwd.C0Batigq'),
+(2, 'Uenio Viana', 'Administrador', '222.222.222-22', '(24) 1823-1720', 'ueniomlh@gmail.com', '$2y$10$u/Sv5fj0VceLJ7ZMnOBbDucrusinrtbIQ.s2HnZaKUBJHgJHJDCMm'),
+(3, 'Simon Belmont', 'Administrador', '333.333.333-33', '(90) 5872-0912', 'belmont@castlevania.com', '$2y$10$JCm0f9y8BpgsMSlJDvBQruMtZ9MY6zdKeqbgY1r/qC2imFJHwkgGG'),
+(4, 'Convidado 1', 'Atendente', '430.982.392-31', '(39) 2484-3523', 'convidado1@convidado.com', '$2y$10$7M51CkLm8QlpGd9qWUYFn.Lqdp6dt13shNQBNb.usegQHR.EanAbe');
 
 -- --------------------------------------------------------
 
@@ -190,13 +179,6 @@ CREATE TABLE `produtos_devolucao` (
   `motivo_devolucao` varchar(50) NOT NULL,
   `data_devolucao` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `produtos_devolucao`
---
-
-INSERT INTO `produtos_devolucao` (`cd_produto_devolucao`, `cd_devolucao`, `cd_produto_venda`, `cd_produto`, `valor_item`, `quantidade`, `valor_devolucao`, `motivo_devolucao`, `data_devolucao`) VALUES
-(1, 3, 2, 11, '15.75', 1, '15.75', 'Tamanho errado', '2021-08-12 06:58:25');
 
 -- --------------------------------------------------------
 
@@ -219,9 +201,7 @@ CREATE TABLE `produtos_entrada` (
 --
 
 INSERT INTO `produtos_entrada` (`cd_produto_entrada`, `cd_entrada`, `cd_produto`, `valor_item`, `porcentagem_revenda`, `quantidade`, `data_entrada`) VALUES
-(1, 1, 1, '50.00', 10, 1, '2021-08-14 02:43:11'),
-(2, 1, 1, '50.00', 10, 3, '2021-08-14 02:44:33'),
-(3, 1, 1, '50.00', 10, 8, '2021-08-14 02:44:51');
+(1, 1, 2, '9.87', 80, 1, '2021-08-14 17:52:52');
 
 -- --------------------------------------------------------
 
@@ -239,23 +219,6 @@ CREATE TABLE `produtos_venda` (
   `data_venda` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `produtos_venda`
---
-
-INSERT INTO `produtos_venda` (`cd_produto_venda`, `cd_venda`, `cd_produto`, `valor_item`, `quantidade`, `valor_venda`, `data_venda`) VALUES
-(7, 4, 10, '110.00', 1, '110.00', '2021-08-13 04:46:18'),
-(10, 5, 1, '55.00', 1, '55.00', '2021-08-13 05:06:21'),
-(12, 7, 1, '55.00', 1, '55.00', '2021-08-14 01:48:09'),
-(13, 7, 12, '170.00', 1, '170.00', '2021-08-14 01:48:09'),
-(16, 10, 11, '15.75', 3, '47.25', '2021-08-14 01:56:56'),
-(17, 10, 13, '110.00', 1, '110.00', '2021-08-14 01:56:56'),
-(29, 19, 1, '55.00', 1, '55.00', '2021-08-14 02:18:59'),
-(30, 19, 11, '15.75', 1, '15.75', '2021-08-14 02:18:59'),
-(31, 19, 12, '170.00', 1, '170.00', '2021-08-14 02:18:59'),
-(34, 19, 12, '170.00', 1, '170.00', '2021-08-14 02:25:25'),
-(39, 24, 10, '110.00', 1, '110.00', '2021-08-14 02:29:03');
-
 -- --------------------------------------------------------
 
 --
@@ -271,21 +234,6 @@ CREATE TABLE `venda` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `venda`
---
-
-INSERT INTO `venda` (`cd_venda`, `cd_funcionario`, `cd_cliente`, `tipo_pagamento`, `data_venda`) VALUES
-(1, 1, 1, 'Pagamento á vista', '2021-08-12 06:50:42'),
-(2, 1, 1, 'Pagamento á vista', '2021-08-13 02:37:22'),
-(3, 1, 1, 'Pagamento á vista', '2021-08-13 03:57:28'),
-(4, 1, 1, 'Pagamento á vista', '2021-08-13 04:46:18'),
-(5, 1, 1, 'Pagamento á vista', '2021-08-13 05:06:21'),
-(7, 1, 1, 'Pagamento á vista', '2021-08-14 01:48:09'),
-(10, 1, 1, 'Pagamento á vista', '2021-08-14 01:56:56'),
-(19, 1, 1, 'Pagamento á vista', '2021-08-14 02:18:59'),
-(24, 1, 1, 'Pagamento á vista', '2021-08-14 02:29:03');
-
---
 -- Índices para tabelas despejadas
 --
 
@@ -293,10 +241,7 @@ INSERT INTO `venda` (`cd_venda`, `cd_funcionario`, `cd_cliente`, `tipo_pagamento
 -- Índices para tabela `cliente`
 --
 ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`cd_cliente`),
-  ADD UNIQUE KEY `cpf` (`cpf`),
-  ADD UNIQUE KEY `telefone` (`telefone`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`cd_cliente`);
 
 --
 -- Índices para tabela `compra_produto`
@@ -316,25 +261,19 @@ ALTER TABLE `devolucao`
 ALTER TABLE `entrada`
   ADD PRIMARY KEY (`cd_entrada`),
   ADD KEY `cd_funcionario` (`cd_funcionario`),
-  ADD KEY `cd_cliente` (`cd_fornecedor`);
+  ADD KEY `cd_fornecedor` (`cd_fornecedor`);
 
 --
 -- Índices para tabela `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  ADD PRIMARY KEY (`cd_fornecedor`),
-  ADD UNIQUE KEY `cnpj` (`cnpj`),
-  ADD UNIQUE KEY `telefone` (`telefone`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`cd_fornecedor`);
 
 --
 -- Índices para tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  ADD PRIMARY KEY (`cd_funcionario`),
-  ADD UNIQUE KEY `cpf` (`cpf`),
-  ADD UNIQUE KEY `telefone` (`telefone`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`cd_funcionario`);
 
 --
 -- Índices para tabela `produtos_devolucao`
@@ -350,16 +289,16 @@ ALTER TABLE `produtos_devolucao`
 --
 ALTER TABLE `produtos_entrada`
   ADD PRIMARY KEY (`cd_produto_entrada`),
-  ADD KEY `cd_produto` (`cd_produto`),
-  ADD KEY `cd_entrada` (`cd_entrada`);
+  ADD KEY `cd_entrada` (`cd_entrada`),
+  ADD KEY `cd_produto` (`cd_produto`);
 
 --
 -- Índices para tabela `produtos_venda`
 --
 ALTER TABLE `produtos_venda`
   ADD PRIMARY KEY (`cd_produto_venda`),
-  ADD KEY `cd_produto` (`cd_produto`),
-  ADD KEY `cd_venda` (`cd_venda`);
+  ADD KEY `cd_venda` (`cd_venda`),
+  ADD KEY `cd_produto` (`cd_produto`);
 
 --
 -- Índices para tabela `venda`
@@ -377,71 +316,101 @@ ALTER TABLE `venda`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `cd_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cd_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `compra_produto`
 --
 ALTER TABLE `compra_produto`
-  MODIFY `cd_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `cd_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `devolucao`
 --
 ALTER TABLE `devolucao`
-  MODIFY `cd_devolucao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cd_devolucao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `entrada`
 --
 ALTER TABLE `entrada`
-  MODIFY `cd_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cd_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `cd_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cd_fornecedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `cd_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cd_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `produtos_devolucao`
 --
 ALTER TABLE `produtos_devolucao`
-  MODIFY `cd_produto_devolucao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cd_produto_devolucao` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `produtos_entrada`
 --
 ALTER TABLE `produtos_entrada`
-  MODIFY `cd_produto_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cd_produto_entrada` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `produtos_venda`
 --
 ALTER TABLE `produtos_venda`
-  MODIFY `cd_produto_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `cd_produto_venda` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `venda`
 --
 ALTER TABLE `venda`
-  MODIFY `cd_venda` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `cd_venda` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para despejos de tabelas
 --
 
 --
+-- Limitadores para a tabela `entrada`
+--
+ALTER TABLE `entrada`
+  ADD CONSTRAINT `entrada_ibfk_1` FOREIGN KEY (`cd_funcionario`) REFERENCES `funcionario` (`cd_funcionario`),
+  ADD CONSTRAINT `entrada_ibfk_2` FOREIGN KEY (`cd_fornecedor`) REFERENCES `fornecedor` (`cd_fornecedor`);
+
+--
+-- Limitadores para a tabela `produtos_devolucao`
+--
+ALTER TABLE `produtos_devolucao`
+  ADD CONSTRAINT `produtos_devolucao_ibfk_1` FOREIGN KEY (`cd_devolucao`) REFERENCES `devolucao` (`cd_devolucao`),
+  ADD CONSTRAINT `produtos_devolucao_ibfk_2` FOREIGN KEY (`cd_produto_venda`) REFERENCES `produtos_venda` (`cd_produto_venda`),
+  ADD CONSTRAINT `produtos_devolucao_ibfk_3` FOREIGN KEY (`cd_produto`) REFERENCES `compra_produto` (`cd_produto`);
+
+--
+-- Limitadores para a tabela `produtos_entrada`
+--
+ALTER TABLE `produtos_entrada`
+  ADD CONSTRAINT `produtos_entrada_ibfk_1` FOREIGN KEY (`cd_entrada`) REFERENCES `entrada` (`cd_entrada`),
+  ADD CONSTRAINT `produtos_entrada_ibfk_2` FOREIGN KEY (`cd_produto`) REFERENCES `compra_produto` (`cd_produto`);
+
+--
 -- Limitadores para a tabela `produtos_venda`
 --
 ALTER TABLE `produtos_venda`
-  ADD CONSTRAINT `produtos_venda_ibfk_1` FOREIGN KEY (`cd_produto`) REFERENCES `compra_produto` (`cd_produto`);
+  ADD CONSTRAINT `produtos_venda_ibfk_1` FOREIGN KEY (`cd_venda`) REFERENCES `venda` (`cd_venda`),
+  ADD CONSTRAINT `produtos_venda_ibfk_2` FOREIGN KEY (`cd_produto`) REFERENCES `compra_produto` (`cd_produto`);
+
+--
+-- Limitadores para a tabela `venda`
+--
+ALTER TABLE `venda`
+  ADD CONSTRAINT `venda_ibfk_1` FOREIGN KEY (`cd_funcionario`) REFERENCES `funcionario` (`cd_funcionario`),
+  ADD CONSTRAINT `venda_ibfk_2` FOREIGN KEY (`cd_cliente`) REFERENCES `cliente` (`cd_cliente`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
