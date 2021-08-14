@@ -74,9 +74,7 @@ header("Pragma: no-cache");
 													<input class="form-control" type="password" name="senha" id="senha" title="Campo para inserir sua senha atual" size="30" maxlength="32" required="" onclick="mostrarSenha()">
 												</div>
 											</div>
-
 										</div>
-
 
 										<div class="row">
 											<div class="col-md-3 pr-1">
@@ -113,8 +111,7 @@ header("Pragma: no-cache");
 
 					</div>
 				</div>
-
-				
+	
 			</div>
 			<footer class="footer" style="background-color: #DCDCDC">
 				<div class="container-fluid">
