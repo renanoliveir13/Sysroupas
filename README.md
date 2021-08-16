@@ -45,3 +45,17 @@ O sistema em questão trata-se de um sistema web para o gerenciamento de vendas 
         </td>
     </tr>
 </table>
+
+### Funcionalidades do sistema <h3>
+Funcionalidade | Status
+------------ | -------------
+Gerenciamento de clientes | Funcionando
+Gerenciamento de funcionários | Funcionando
+Gerenciamento de fornecedores | Funcionando
+Gerenciamento de produtos | Funcionando
+ Gerenciamento de entrada de produtos | Funcionando
+Gerenciamento de vendas | Funcionando
+Gerenciamento de devoluções | Funcionando
+Fluxo de caixa | Funcionando
+Configurações | Funcionando
+Login/Logout | Funcionando
