@@ -11,8 +11,7 @@ Programação Web II feito no semestre de 2020.2 no Instituto Federal de Educaç
                 <br/>
                 <b>Iury Fernandes</b>
             </a>
-             <li> Desenvolvedor </li>
-             <li> Responsável pelos testes </li>
+         <li> Desenvolvedor </li>
         </td>
         <td align="center">
             <a href="https://github.com/renanoliveir13">
@@ -21,7 +20,6 @@ Programação Web II feito no semestre de 2020.2 no Instituto Federal de Educaç
                 <b>Renan Oliveira</b>   
             </a>
             <li> Desenvolvedor </li>
-            <li> DBA </li>
         </td>
         <td align="center">
             <a href="https://github.com/ThamiresAlmeida">
@@ -30,7 +28,6 @@ Programação Web II feito no semestre de 2020.2 no Instituto Federal de Educaç
                 <b>Thamires Almeida</b>   
             </a>
             <li> Desenvolvedor </li>
-            <li> DBA </li>
         </td>
     </tr>
 </table>
