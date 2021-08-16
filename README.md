@@ -6,7 +6,7 @@ O sistema em questão trata-se de um sistema web para o gerenciamento de vendas 
 * [Bootstrap](https://getbootstrap.com/)
 * [Figma](https://www.figma.com)
 * [MySQL Workbench](https://www.mysql.com/products/workbench/)
-* [Visual Studio](https://code.visualstudio.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 * [Trello](https://trello.com/)
 
 ### Linguagens utilizadas <h3>
