@@ -59,3 +59,7 @@ Gerenciamento de devoluções | Funcionando
 Fluxo de caixa | Funcionando
 Configurações | Funcionando
 Login/Logout | Funcionando
+
+> Para mais informações sobre funcionalidade, layout e outras informações acesse a documentação do Sysroupas
+>
+> [Documentação do Sysroupas](https://github.com/Iury189/web2/blob/master/documentos/Documenta%C3%A7%C3%A3o%20Sysroupas.pdf)
