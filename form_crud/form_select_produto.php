@@ -130,7 +130,6 @@ header("Pragma: no-cache");
 											  	</button>
 												<div class="dropdown-menu">													
 													<a class="dropdown-item " style="border-radius: 20px;" <a href="/web/form_crud/form_update_produto.php?id=' . $exibir_colunas['cd_produto'] . '" title="Atualizar">Atualizar</a>
-													<a class="dropdown-item" style="border-radius: 20px;" <a href="/web/form_crud/form_insert_produtoentrada.php?id=' . $exibir_colunas['cd_produto'] . '" title="Entrada">Entrada</a>
 													<a class="dropdown-item" style="border-radius: 20px;" <a href="/web/form_crud/form_select_produtohistorico.php?id=' . $exibir_colunas['cd_produto'] . '" title="Histórico">Histórico</a>
 													<a class="dropdown-item"  style="border-radius: 20px;"href="/web/form_crud/form_delete_produto.php?id=' . $exibir_colunas['cd_produto'] . '" title="Excluir">Excluir</a>
 													</div>
